@@ -1,0 +1,35 @@
+to fix:
+[] make images on tab 0 always x# of pixles from bottom of screen
+[] some issue with tab 2?? (can't click last button??)
+[] rn up to 2023...to incorporate 2024 within rsg and stuff?
+[] what's the difference between a website and a webapp anyway??
+[] as of date...
+
+
+
+MAIN THINGS TO INCLUDE:
+[] enter name
+[] track ip or whatever
+
+
+possible titles:
+[] sarastopsecretwebsite
+
+
+
+
+ideas:
+[] music newsletter where i send out new song of week or something
+
+
+
+[] PUT IN ALL OHER STUFF FROM PAST NOTES THAT WERE IN DIFF SECTIONS!!!
+
+
+EOD TUES:
+[] REDO TAB2 from scratch since idk what's not working
+[] then put on site using render!
+
+[] Wed/thurs/in airport:
+[] figure out how to enter name and store
+[] also ip whaveter
