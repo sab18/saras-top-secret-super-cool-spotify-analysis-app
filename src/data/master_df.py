@@ -1,8 +1,11 @@
 import pandas as pd
 
 import os, sys
-src_dir_h1 = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
-sys.path.append(src_dir_h1)
+src_dir_h2 = os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..'))
+sys.path.append(src_dir_h2)
+
+# src_dir_h1 = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
+# sys.path.append(src_dir_h1)
 
 from data.get_data_funct import get_df
 
