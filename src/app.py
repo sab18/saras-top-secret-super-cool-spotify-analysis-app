@@ -30,7 +30,7 @@ from tab5_div import tab5_layout
 
 external_stylesheets = [dbc.themes.SKETCHY]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-# server = app.server #in src/app.py
+server = app.server #in src/app.py
 
 
 app.layout = html.Div([
