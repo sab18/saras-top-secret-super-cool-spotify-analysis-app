@@ -2,6 +2,8 @@ from dash import html
 
 from image import import_image
 from colors import green
+import os
+
 
 tab0_image_folder='src'
 
@@ -9,7 +11,7 @@ tab0_padding='85px'
 
 tab0_image_short_style = {'height': '95px', 'padding': '10px'}
 tab0_image_tall_style = {'height': '145px', 'padding': '10px'}
-
+image1_path = os.path.abspath('hp1.png')
 
 tab0_layout = html.Div([
                 html.H3('Welcome!', style={'text-align': 'center','margin-top': '20px','color':green,'font-weight': 'bold'}),
@@ -32,7 +34,7 @@ tab0_layout = html.Div([
 
                
                 html.Div([
-                    html.Img(src='hp1.png', style=tab0_image_short_style),
+                    html.Img(src=image1_path, style=tab0_image_short_style),
                     html.Img(src='hp2.png', style=tab0_image_tall_style),
                     html.Img(src='hp3.png', style=tab0_image_short_style),
                     html.Img(src='hp4.png', style=tab0_image_short_style),
