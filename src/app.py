@@ -23,10 +23,10 @@ from tab0_div import tab0_layout
 from tab1_div import tab1_layout
 from tab2_div import tab2_layout
 from tab2_top5 import artist_dict, song_dict
-# from tab3_div import tab3_layout
-# from tab4_div import tab4_layout
-# # from tab4_fun_facts import fun_fact_list
-# from tab5_div import tab5_layout
+from tab3_div import tab3_layout
+from tab4_div import tab4_layout
+from tab4_fun_facts import fun_fact_list
+from tab5_div import tab5_layout
 
 
 external_stylesheets = [dbc.themes.SKETCHY]
@@ -39,9 +39,9 @@ app.layout = html.Div([
         dcc.Tab(label='Homepage', value='tab-0', children=tab0_layout),
         dcc.Tab(label="And That's a Wrap", value='tab-1', children=tab1_layout),
         dcc.Tab(label="High Five", value='tab-2', children=tab2_layout), 
-        # dcc.Tab(label="In the Name of New Music", value='tab-3', children=tab3_layout),
-        # dcc.Tab(label="Fun Facts!", value='tab-4', children=tab4_layout),
-        # dcc.Tab(label="Under Construction", value='tab-5', children=tab5_layout)
+        dcc.Tab(label="In the Name of New Music", value='tab-3', children=tab3_layout),
+        dcc.Tab(label="Fun Facts!", value='tab-4', children=tab4_layout),
+        dcc.Tab(label="Under Construction", value='tab-5', children=tab5_layout)
     ]),
 ])
 # with open("hp1.png", "rb") as image_file:
@@ -199,62 +199,62 @@ def update_output_tab2(*args):
 
 
 
-# @app.callback(
-#     Output("output-tab3", "children"),
-#     [Input('button-Random Song Generator', "n_clicks")]
-# )
-# def update_output_tab3(n_clicks):
-#     if n_clicks:
-#         random_selection=df_cleaned.sample(n=1)
+@app.callback(
+    Output("output-tab3", "children"),
+    [Input('button-Random Song Generator', "n_clicks")]
+)
+def update_output_tab3(n_clicks):
+    if n_clicks:
+        random_selection=df_cleaned.sample(n=1)
 
-#         random_selection['ts'] = pd.to_datetime(random_selection['ts'])
+        random_selection['ts'] = pd.to_datetime(random_selection['ts'])
 
-#         random_song = random_selection['master_metadata_track_name']
-#         random_artist=random_selection['master_metadata_album_artist_name']
-#         random_date=random_selection['ts'].dt.strftime('%m/%d/%Y')
-#         random_time=random_selection['ts'].dt.strftime('%H:%M')
+        random_song = random_selection['master_metadata_track_name']
+        random_artist=random_selection['master_metadata_album_artist_name']
+        random_date=random_selection['ts'].dt.strftime('%m/%d/%Y')
+        random_time=random_selection['ts'].dt.strftime('%H:%M')
 
-#         song_details_1 = f"{name} recommends you listen to "
-#         song_details_2= f'{random_song.iloc[0]}'
-#         song_details_3= ' by '
-#         song_details_4= f'{random_artist.iloc[0]}'
-#         song_details_5='.'
-#         song_details_6= f"  Btw, {name} played this song on {random_date.iloc[0]} at {random_time.iloc[0]}!"
-#         song_details_7=f'Pleaseeee...give {name} new music reccs to replace The 1975 with.'
+        song_details_1 = f"{name} recommends you listen to "
+        song_details_2= f'{random_song.iloc[0]}'
+        song_details_3= ' by '
+        song_details_4= f'{random_artist.iloc[0]}'
+        song_details_5='.'
+        song_details_6= f"  Btw, {name} played this song on {random_date.iloc[0]} at {random_time.iloc[0]}!"
+        song_details_7=f'Pleaseeee...give {name} new music reccs to replace The 1975 with.'
     
-#         if random_artist.iloc[0]=='The 1975':
-#             return html.Div([
-#                 html.Span(song_details_1),
-#                 html.Span(song_details_2,style={'background':green,'font-weight':'boldest'}),
-#                 html.Span(song_details_3),
-#                 html.Span(song_details_4,style={'background':green,'font-weight':'boldest'}),  
-#                 html.Span(song_details_5),  
-#                 html.Span(song_details_6),
-#                 html.Div([song_details_7],style={'margin-top':'5px'}),  
-#                 ],style={'text-align':'center'})
-#         else:
-#             return html.Div([
-#                 html.Span(song_details_1),
-#                 html.Span(song_details_2,style={'background':green,'font-weight':'boldest'}),
-#                 html.Span(song_details_3),
-#                 html.Span(song_details_4,style={'background':green,'font-weight':'boldest'}),  
-#                 html.Span(song_details_5),  
-#                 html.Span(song_details_6),  
-#                 ],style={'text-align':'center'})
-#     return None
+        if random_artist.iloc[0]=='The 1975':
+            return html.Div([
+                html.Span(song_details_1),
+                html.Span(song_details_2,style={'background':green,'font-weight':'boldest'}),
+                html.Span(song_details_3),
+                html.Span(song_details_4,style={'background':green,'font-weight':'boldest'}),  
+                html.Span(song_details_5),  
+                html.Span(song_details_6),
+                html.Div([song_details_7],style={'margin-top':'5px'}),  
+                ],style={'text-align':'center'})
+        else:
+            return html.Div([
+                html.Span(song_details_1),
+                html.Span(song_details_2,style={'background':green,'font-weight':'boldest'}),
+                html.Span(song_details_3),
+                html.Span(song_details_4,style={'background':green,'font-weight':'boldest'}),  
+                html.Span(song_details_5),  
+                html.Span(song_details_6),  
+                ],style={'text-align':'center'})
+    return None
 
 
-# # @app.callback(
-# #     Output("output-tab4", "children"),
-# #     [Input('button-Fun Facts HERE', "n_clicks")]
-# # )
-# # def update_output_tab4(n_clicks):
+@app.callback(
+    Output("output-tab4", "children"),
+    [Input('button-Fun Facts HERE', "n_clicks")]
+)
+def update_output_tab4(n_clicks):
 
-# #     if n_clicks:
-# #         random_fun_fact=random.choice(fun_fact_list)
-# #         return html.Div(random_fun_fact,style={'text-align': 'center','margin-top':'10px'})
+    if n_clicks:
+        random_fun_fact=random.choice(fun_fact_list)
+        return html.Div(random_fun_fact,style={'text-align': 'center','margin-top':'10px'})
 
-# #     return None
+    return None
 
 
 print('ran')
