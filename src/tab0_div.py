@@ -15,9 +15,16 @@ tab0_image_tall_style = {'height': '145px', 'padding': '10px'}
 
 with open("hp1.png", "rb") as image_file:
     encoded_string1 = base64.b64encode(image_file.read()).decode('utf-8')
-
-
-
+with open("hp2.png", "rb") as image_file:
+    encoded_string2 = base64.b64encode(image_file.read()).decode('utf-8')
+with open("hp3.png", "rb") as image_file:
+    encoded_string3 = base64.b64encode(image_file.read()).decode('utf-8')
+with open("hp4.png", "rb") as image_file:
+    encoded_string4 = base64.b64encode(image_file.read()).decode('utf-8')
+with open("hp5.png", "rb") as image_file:
+    encoded_string5 = base64.b64encode(image_file.read()).decode('utf-8')
+with open("hp6.png", "rb") as image_file:
+    encoded_string6 = base64.b64encode(image_file.read()).decode('utf-8')
 
 tab0_layout = html.Div([
                 html.H3('Welcome!', style={'text-align': 'center','margin-top': '20px','color':green,'font-weight': 'bold'}),
@@ -41,10 +48,10 @@ tab0_layout = html.Div([
                
                 html.Div([
                     html.Img(src='data:image/png;base64,{}'.format(encoded_string1),style=tab0_image_short_style),
-                    html.Img(src='hp2.png', style=tab0_image_tall_style),
-                    html.Img(src='hp3.png', style=tab0_image_short_style),
-                    html.Img(src='hp4.png', style=tab0_image_short_style),
-                    html.Img(src='hp5.png', style=tab0_image_tall_style),
-                    html.Img(src='hp6.png', style=tab0_image_short_style)
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_string2),style=tab0_image_tall_style),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_string3),style=tab0_image_short_style),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_string4),style=tab0_image_short_style),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_string5),style=tab0_image_tall_style),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_string6),style=tab0_image_short_style)
                 ],style={'display': 'flex', 'justify-content': 'space-between','padding': '0 60px','margin': '0 -20px','position': 'relative','margin-top':'80px'})
 ], style={'padding': '0 40px'}) 

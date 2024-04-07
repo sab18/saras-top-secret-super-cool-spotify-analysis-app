@@ -13,18 +13,18 @@ import os
 # print('df created')
 
 file_names = ['Streaming_History_Audio_2013-2017_0.json',
-              'Streaming_History_Audio_2017-2018_1.json']
-            #   'Streaming_History_Audio_2018-2019_2.json',
-            #   'Streaming_History_Audio_2019-2020_3.json',
-            #   'Streaming_History_Audio_2020_4.json',
-            #   'Streaming_History_Audio_2020-2021_5.json',
-            #   'Streaming_History_Audio_2021_6.json',
-            #   'Streaming_History_Audio_2021-2022_7.json',
-            #   'Streaming_History_Audio_2022_8.json',
-            #   'Streaming_History_Audio_2022-2023_9.json'
-            #   'Streaming_History_Audio_2023_10.json',
-            #   'Streaming_History_Audio_2023_11.json',
-            #   'Streaming_History_Audio_2023-2024_12.json']
+              'Streaming_History_Audio_2017-2018_1.json'
+              'Streaming_History_Audio_2018-2019_2.json',
+              'Streaming_History_Audio_2019-2020_3.json',
+              'Streaming_History_Audio_2020_4.json',
+              'Streaming_History_Audio_2020-2021_5.json',
+              'Streaming_History_Audio_2021_6.json',
+              'Streaming_History_Audio_2021-2022_7.json',
+              'Streaming_History_Audio_2022_8.json',
+              'Streaming_History_Audio_2022-2023_9.json'
+              'Streaming_History_Audio_2023_10.json',
+              'Streaming_History_Audio_2023_11.json',
+              'Streaming_History_Audio_2023-2024_12.json']
 
 dfs=[]
 for file_name in file_names:
