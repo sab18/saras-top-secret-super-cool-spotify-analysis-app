@@ -24,7 +24,7 @@ from tab2_div import tab2_layout
 from tab2_top5 import artist_dict, song_dict
 from tab3_div import tab3_layout
 from tab4_div import tab4_layout
-from tab4_fun_facts import fun_fact_list
+# from tab4_fun_facts import fun_fact_list
 from tab5_div import tab5_layout
 
 
@@ -165,17 +165,17 @@ def update_output_tab3(n_clicks):
     return None
 
 
-@app.callback(
-    Output("output-tab4", "children"),
-    [Input('button-Fun Facts HERE', "n_clicks")]
-)
-def update_output_tab4(n_clicks):
+# @app.callback(
+#     Output("output-tab4", "children"),
+#     [Input('button-Fun Facts HERE', "n_clicks")]
+# )
+# def update_output_tab4(n_clicks):
 
-    if n_clicks:
-        random_fun_fact=random.choice(fun_fact_list)
-        return html.Div(random_fun_fact,style={'text-align': 'center','margin-top':'10px'})
+#     if n_clicks:
+#         random_fun_fact=random.choice(fun_fact_list)
+#         return html.Div(random_fun_fact,style={'text-align': 'center','margin-top':'10px'})
 
-    return None
+#     return None
 
 
 print('ran')
