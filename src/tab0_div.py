@@ -3,7 +3,7 @@ from dash import html
 from image import import_image
 from colors import green
 import os
-
+import base64
 
 tab0_image_folder='src'
 
@@ -11,7 +11,13 @@ tab0_padding='85px'
 
 tab0_image_short_style = {'height': '95px', 'padding': '10px'}
 tab0_image_tall_style = {'height': '145px', 'padding': '10px'}
-image1_path = os.path.abspath('hp1.png')
+# image1_path = os.path.abspath('hp1.png')
+
+with open("hp1.png", "rb") as image_file:
+    encoded_string1 = base64.b64encode(image_file.read()).decode('utf-8')
+
+
+
 
 tab0_layout = html.Div([
                 html.H3('Welcome!', style={'text-align': 'center','margin-top': '20px','color':green,'font-weight': 'bold'}),
@@ -34,7 +40,7 @@ tab0_layout = html.Div([
 
                
                 html.Div([
-                    html.Img(src=image1_path, style=tab0_image_short_style),
+                    html.Img(src='data:image/png;base64,{}'.format(encoded_string1),style=tab0_image_short_style),
                     html.Img(src='hp2.png', style=tab0_image_tall_style),
                     html.Img(src='hp3.png', style=tab0_image_short_style),
                     html.Img(src='hp4.png', style=tab0_image_short_style),
