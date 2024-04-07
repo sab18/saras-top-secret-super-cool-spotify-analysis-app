@@ -56,7 +56,7 @@ if data=='subset':
 
 elif data=='full':
 
-    folder_name='src'
+    folder_name=''
     h0=get_df('Streaming_History_Audio_2013-2017_0.json',folder_name)
     h1=get_df('Streaming_History_Audio_2017-2018_1.json',folder_name)
     h2=get_df('Streaming_History_Audio_2018-2019_2.json',folder_name)  
