@@ -33,10 +33,10 @@ tab0_layout = html.Div([
                
                 html.Div([
                     html.Img(src='hp1.png', style=tab0_image_short_style),
-                    html.Img(src='data:image/png;base64,{}'.format(import_image(tab0_image_folder+'/hp2.png')), style=tab0_image_tall_style),
-                    html.Img(src='data:image/png;base64,{}'.format(import_image(tab0_image_folder+'/hp3.png')), style=tab0_image_short_style),
-                    html.Img(src='data:image/png;base64,{}'.format(import_image(tab0_image_folder+'/hp4.png')), style=tab0_image_short_style),
-                    html.Img(src='data:image/png;base64,{}'.format(import_image(tab0_image_folder+'/hp5.png')), style=tab0_image_tall_style),
-                    html.Img(src='data:image/png;base64,{}'.format(import_image(tab0_image_folder+'/hp6.png')), style=tab0_image_short_style)
+                    html.Img(src='hp2.png', style=tab0_image_tall_style),
+                    html.Img(src='hp3.png', style=tab0_image_short_style),
+                    html.Img(src='hp4.png', style=tab0_image_short_style),
+                    html.Img(src='hp5.png', style=tab0_image_tall_style),
+                    html.Img(src='hp6.png', style=tab0_image_short_style)
                 ],style={'display': 'flex', 'justify-content': 'space-between','padding': '0 60px','margin': '0 -20px','position': 'relative','margin-top':'80px'})
 ], style={'padding': '0 40px'}) 
