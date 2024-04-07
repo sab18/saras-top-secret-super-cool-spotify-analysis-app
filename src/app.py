@@ -8,29 +8,29 @@ import random
 
 # from tabs.tab_blank.tab_blank_div import tab_blank_layout
 
-import os,sys
-src_dir_h2 = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','..'))
-sys.path.append(src_dir_h2)
+# import os,sys
+# src_dir_h2 = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','..'))
+# sys.path.append(src_dir_h2)
 
-from assets.unique_years_list import years_sorted
-from assets.inputs import name
-from assets.image import import_image
-from assets.colors import green, grey
-from data.master_df import df_cleaned
+from unique_years_list import years_sorted
+from inputs import name
+from image import import_image
+from colors import green, grey
+from master_df import df_cleaned
 
-from tabs.tab0.tab0_div import tab0_layout
-from tabs.tab1.tab1_div import tab1_layout
-from tabs.tab2.tab2_div import tab2_layout
-from tabs.tab2.tab2_top5 import artist_dict, song_dict
-from tabs.tab3.tab3_div import tab3_layout
-from tabs.tab4.tab4_div import tab4_layout
-from tabs.tab4.tab4_fun_facts import fun_fact_list
-from tabs.tab5.tab5_div import tab5_layout
+from tab0_div import tab0_layout
+from tab1_div import tab1_layout
+from tab2_div import tab2_layout
+from tab2_top5 import artist_dict, song_dict
+from tab3_div import tab3_layout
+from tab4_div import tab4_layout
+from tab4_fun_facts import fun_fact_list
+from tab5_div import tab5_layout
 
 
 external_stylesheets = [dbc.themes.SKETCHY]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server #in src/app.py
+# server = app.server #in src/app.py
 
 
 app.layout = html.Div([
@@ -43,6 +43,8 @@ app.layout = html.Div([
         dcc.Tab(label="Under Construction", value='tab-5', children=tab5_layout)
     ]),
 ])
+
+
 @app.callback(
     [Output("output-tab2", "children"), Output("image-output-tab2", "src")] + [Output(f"button-{year}", "style") for year in years_sorted],
     [Input(f"button-{year}", "n_clicks") for year in years_sorted]
@@ -62,7 +64,7 @@ def update_output_tab2(*args):
         button_styles = [{'font-size': '18px', 'padding': '6px 10px','margin-left':'10px','margin-right':'10px'} for _ in args]
         button_styles[clicked_index] = {'font-size': '18px', 'padding': '6px 10px','margin-left':'10px','margin-right':'10px','backgroundColor': grey}
 
-        image_src = 'data:image/png;base64,{}'.format(import_image('src/tabs/tab2/tab2_images/'+f"pic_button-{clicked_year}.jpg"))
+        image_src = 'data:image/png;base64,{}'.format(import_image('src/'+f"pic_button-{clicked_year}.jpg"))
         
         children = html.Div([
             html.Div([
