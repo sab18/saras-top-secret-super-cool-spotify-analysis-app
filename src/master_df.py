@@ -4,38 +4,82 @@
 # Define the directory where your JSON files are located
 
 
-import os
 import pandas as pd
+import os
 
-def load_json_files(directory):
-    # Initialize an empty list to store DataFrames
-    dfs = []
+# df_cleaned = pd.read_json('src/Streaming_History_Audio_2013-2017_0.json')
+# df_cleaned=df_cleaned.head()
+# print(df_cleaned)
+# print('df created')
 
-    # Iterate through all files in the directory
-    for filename in os.listdir(directory):
-        if filename.endswith('.json'):
-            # Construct the full file path
-            filepath = os.path.join(directory, filename)
-            
-            # Read the JSON file into a DataFrame and append to the list
-            try:
-                df = pd.read_json(filepath)
-                dfs.append(df)
-                #print(f"Processed: {filename}")
-            except Exception as e:
-                print(f"Error reading {filename}: {e}")
+file_names = ['Streaming_History_Audio_2013-2017_0.json',
+              'Streaming_History_Audio_2017-2018_1.json']
+            #   'Streaming_History_Audio_2018-2019_2.json',
+            #   'Streaming_History_Audio_2019-2020_3.json',
+            #   'Streaming_History_Audio_2020_4.json',
+            #   'Streaming_History_Audio_2020-2021_5.json',
+            #   'Streaming_History_Audio_2021_6.json',
+            #   'Streaming_History_Audio_2021-2022_7.json',
+            #   'Streaming_History_Audio_2022_8.json',
+            #   'Streaming_History_Audio_2022-2023_9.json'
+            #   'Streaming_History_Audio_2023_10.json',
+            #   'Streaming_History_Audio_2023_11.json',
+            #   'Streaming_History_Audio_2023-2024_12.json']
 
-    # Concatenate all DataFrames in the list into one large DataFrame
-    df_master = pd.concat(dfs, ignore_index=True)
-    df_cleaned=df_master.loc[:,['ts','ms_played','master_metadata_track_name','master_metadata_album_artist_name','conn_country','skipped','incognito_mode','reason_start']]
-    return df_cleaned
+dfs=[]
+for file_name in file_names:
 
-# Example usage:
-directory = directory = '/Users/sab/Desktop/saras-top-secret-super-cool-spotify-analysis-app/src'
-df_cleaned = load_json_files(directory)
+    df = pd.read_json(file_name)
+    dfs.append(df)
+df_master = pd.concat(dfs)
+#lengthh=len(df_cleaned)
 
-# print(df_cleaned.head())
-print('df cleaned')
+df_cleaned=df_master.loc[:,['ts','ms_played','master_metadata_track_name','master_metadata_album_artist_name','conn_country','skipped','incognito_mode','reason_start']]
+print('clean df successful')
+#print(df_cleaned.head())
+
+
+
+# # Assuming you have multiple JSON files named music_data1.json, music_data2.json, etc.
+# file_names = ['Streaming_History_Audio_2013-2017_0.json',
+#               'Streaming_History_Audio_2017-2018_1.json']
+#             #   'Streaming_History_Audio_2018-2019_2.json',
+#             #   'Streaming_History_Audio_2019-2020_3.json',
+#             #   'Streaming_History_Audio_2020_4.json',
+#             #   'Streaming_History_Audio_2020-2021_5.json',
+#             #   'Streaming_History_Audio_2021_6.json',
+#             #   'Streaming_History_Audio_2021-2022_7.json',
+#             #   'Streaming_History_Audio_2022_8.json',
+#             #   'Streaming_History_Audio_2022-2023_9.json'
+#             #   'Streaming_History_Audio_2023_10.json',
+#             #   'Streaming_History_Audio_2023_11.json',
+#             #   'Streaming_History_Audio_2023-2024_12.json']
+
+
+
+# dfs=[]
+# # Iterate through each file
+# for file_name in file_names:
+#     # Construct the full path to the JSON file
+    
+    
+#     # Read the JSON file into a DataFrame and append it to the list
+#     df = pd.read_json(file_name)
+#     dfs.append(df)
+
+# Concatenate all DataFrames in the list
+# df_master = pd.concat(dfs, ignore_index=True)
+
+# df_cleaned=df_master.loc[:,['ts','ms_played','master_metadata_track_name','master_metadata_album_artist_name','conn_country','skipped','incognito_mode','reason_start']]
+
+# print(len(df_cleaned))
+
+# # Example usage:
+# directory = directory = '/Users/sab/Desktop/saras-top-secret-super-cool-spotify-analysis-app/src'
+# df_cleaned = load_json_files(directory)
+
+# # print(df_cleaned.head())
+# print('df cleaned')
 
 
 # #_______________________________
